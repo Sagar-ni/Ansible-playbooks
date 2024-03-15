@@ -1,1 +1,6 @@
-
+---
+hosts: webserevers
+become: true
+tasks: 
+  -name: ceate a file new file
+  file:  path =/home/abc.txt state= touch
