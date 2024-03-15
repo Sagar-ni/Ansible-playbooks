@@ -1,0 +1,15 @@
+ ---
+
+
+
+ - hosts: all
+   become: true
+   tasks:
+    - name: install apache on uabntu
+      apt: name=apache2 state=present
+      when: ansible_os_family == "Debian"
+      ignore_errors: yes
+    - name: install aPache on amazon os
+      yum: name=apache2 state=present
+      when: ansible_os_family == "Redhat"
+      ignore_errors: yes
