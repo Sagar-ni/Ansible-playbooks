@@ -1,0 +1,9 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+   - name: crate a files
+     file: path={{item}} state=directory
+     with_items:
+       - 'home/dir1'
+       - 'home/dir2'
