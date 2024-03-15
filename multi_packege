@@ -1,0 +1,12 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+
+   - name: aate cache and install given data
+     apt:
+     name: "{{item}}"
+       update_cache: yes
+     loop:
+        - curl
+        - tree
