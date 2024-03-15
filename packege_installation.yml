@@ -1,0 +1,15 @@
+---
+- hosts: webservers
+  become: true
+  tasks:
+
+   - name: instaling nginx
+     yum:
+       name: nginx
+       state: latest
+   - name: starting srveice
+     service:
+       name: nginx
+       state: started
+
+       
